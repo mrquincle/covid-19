@@ -19,6 +19,8 @@ source('analyse.R')
 
 It will plot a graph and also write it to `covid-19.png`. Adjust e.g. the countries in the variable `select_countries`.
 
+![Covid 19 in the Netherlands](https://github.com/mrquincle/covid-19/raw/master/image/covid-19-nl-2020-03-10.png)
+
 # Data source
 
 https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide
