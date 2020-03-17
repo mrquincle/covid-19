@@ -1,4 +1,4 @@
-# Corona-19
+# Covid-19
 
 People regretfully do not understand exponential curves so well.
 
