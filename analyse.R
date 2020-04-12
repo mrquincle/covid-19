@@ -1,27 +1,24 @@
 library(ggplot2)
 library(reshape2)
 
-filename <- "dataset/covid-2020-03-10.csv"
+filename <- "dataset/covid-2020-03-17.csv"
+filename <- "dataset/covid-2020-04-12.csv"
 
 # Countries to select from table
-select_countries <- c('DE','NL','BE','CH','IT','CN','KR')
-#select_countries <- c('CN')
+select_countries <- c('DE','NL','IT','CN','KR','ES','US','FR')
+select_countries <- c('NL')
 
-plot_log = 1
-plot_line = 1
-plot_since_zero = 1
+plot_log = 0
+plot_line = 0
+plot_since_zero = 0
 
-since_zero_threshold = 10
+since_zero_threshold = 100
 
 title = "Corona, accumulated cases in different countries"
 caption = "(based on data from https://www.ecdc.europa.eu, see https://bit.ly/2TB0UpM)"
 xlab = "date"
 ylab = "total number of verified infections"
 
-# Adjust titles when plotting other things
-if ((length(select_countries) == 1) && (select_countries[1] == 'NL')) {
-	title = "Corona in the Netherlands"
-}
 if (plot_since_zero) {
 	title = paste("Corona development after day \"zero\" (the first day with more than", since_zero_threshold, "cases)")
 	xlab = paste("days after first number of cases exceeding", since_zero_threshold)
@@ -41,6 +38,7 @@ colnames(dates)[1] <- "date"
 
 country_table <- unique(data[,c("GeoId", "CountryExp")])
 
+
 country_table$index <- seq.int(nrow(country_table))
 
 #print("Possible country abbreviations")
@@ -55,6 +53,13 @@ print(selected_countries)
 
 geoIds <- array(selected_countries$GeoId)
 geoNames <- array(selected_countries$CountryExp)
+
+# Adjust titles when plotting other things
+if (!plot_since_zero) {
+	if ((length(select_countries) == 1)) {
+		title = paste("Corona in the", geoNames[1]);
+	}
+}
 
 k <- length(geoIds)
 
@@ -117,7 +122,7 @@ p <- p + theme(
 			   axis.title.y = element_text(color="black", size=12, face="bold"),
 			   legend.title = element_text(color="black", size=12, face="bold"),
 			   legend.text = element_text(color="black", size=10),
-			   legend.position = c(0.1, 0.8),
+			   legend.position = c(0.2, 0.8),
 			   )
 
 plot(p)

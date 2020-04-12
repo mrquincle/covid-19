@@ -25,6 +25,16 @@ Starting from day zero (with 10 cases):
 
 ![Covid 19 in Europe (after day zero)](https://github.com/mrquincle/covid-19/raw/master/image/covid-19-after-day-zero-2020-03-17.png)
 
+Thankfully there has been a lockdown which immediately put my attention elsewhere. 
+
+![Covid 19 in the Netherlands](https://github.com/mrquincle/covid-19/raw/master/image/covid-19-nl-2020-04-12.png)
+
+Starting from day zero (with 10 cases):
+
+![Covid 19 in Europe (after day zero)](https://github.com/mrquincle/covid-19/raw/master/image/covid-19-after-day-zero-2020-04-12.png)
+
+Let's hope we'll be all following China soon.
+
 # Data source
 
 https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide
